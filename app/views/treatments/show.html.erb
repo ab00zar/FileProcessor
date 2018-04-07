@@ -2,17 +2,17 @@
 
 <p>
   <strong>File1:</strong>
-  <%= @treatment.file1 %>
+  <%= link_to "Download", @treatment.file1.url(:original, false) %>
 </p>
 
 <p>
   <strong>File2:</strong>
-  <%= @treatment.file2 %>
+  <%= link_to "Download", @treatment.file2.url(:original, false) %>
 </p>
 
 <p>
   <strong>Result:</strong>
-  <%= @treatment.result %>
+  <%= link_to "Download", @treatment.result.url(:original, false) %>
 </p>
 
 <p>

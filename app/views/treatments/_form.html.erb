@@ -13,22 +13,17 @@
 
   <div class="field">
     <%= form.label :file1 %>
-    <%= form.text_field :file1, id: :treatment_file1 %>
+    <%= form.file_field :file1, id: :treatment_file1 %>
   </div>
 
   <div class="field">
     <%= form.label :file2 %>
-    <%= form.text_field :file2, id: :treatment_file2 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :result %>
-    <%= form.text_field :result, id: :treatment_result %>
+    <%= form.file_field :file2, id: :treatment_file2 %>
   </div>
 
   <div class="field">
     <%= form.label :created_by %>
-    <%= form.number_field :created_by, id: :treatment_created_by %>
+    <%= form.hidden_field :created_by, id: :treatment_created_by %>
   </div>
 
   <div class="actions">
