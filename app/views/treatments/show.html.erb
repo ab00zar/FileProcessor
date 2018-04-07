@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>File1:</strong>
+  <%= @treatment.file1 %>
+</p>
+
+<p>
+  <strong>File2:</strong>
+  <%= @treatment.file2 %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @treatment.result %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @treatment.created_by %>
+</p>
+
+<%= link_to 'Edit', edit_treatment_path(@treatment) %> |
+<%= link_to 'Back', treatments_path %>

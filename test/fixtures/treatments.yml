@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  file1: 
+  file2: 
+  result: 
+  created_by: 1
+
+two:
+  file1: 
+  file2: 
+  result: 
+  created_by: 1
