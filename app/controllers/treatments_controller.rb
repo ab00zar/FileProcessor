@@ -4,7 +4,7 @@ class TreatmentsController < ApplicationController
   # GET /treatments
   # GET /treatments.json
   def index
-    @treatments = Treatment.all
+    @treatments = Treatment.where(user_id: current_user)
   end
 
   # GET /treatments/1
