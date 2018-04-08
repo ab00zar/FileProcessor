@@ -12,13 +12,17 @@
 
 <p>
   <strong>Result:</strong>
-  <%= link_to "Download", @treatment.result.url(:original, false) %>
+  <%= link_to "Download", '/' + @treatment.id.to_s, { target: '_blank' } %>
 </p>
 
 <p>
   <strong>Created by:</strong>
   <%= @treatment.created_by %>
 </p>
+
+<%= button_to 'Press me', treat_path, method: :get %>
+
+<br>
 
 <%= link_to 'Edit', edit_treatment_path(@treatment) %> |
 <%= link_to 'Back', treatments_path %>

@@ -18,7 +18,7 @@
       <tr>
         <td><%= link_to "Download", treatment.file1.url(:original, false) %></td>
         <td><%= link_to "Download", treatment.file2.url(:original, false) %></td>
-        <td><%= link_to "Download", treatment.result.url(:original, false) %></td>
+        <td><%= link_to "Download", '/' + treatment.id.to_s, { target: '_blank' } %></td>
         <td><%= treatment.created_by %></td>
         <td><%= link_to 'Show', treatment %></td>
         <td><%= link_to 'Edit', edit_treatment_path(treatment) %></td>

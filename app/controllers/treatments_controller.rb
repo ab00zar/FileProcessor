@@ -25,9 +25,9 @@ class TreatmentsController < ApplicationController
   # POST /treatments.json
   def create
     @treatment = Treatment.new(treatment_params)
-
     respond_to do |format|
       if @treatment.save
+        #q1(@treatment.file1.url(:original, false), @treatment.file2.url(:original, false))
         format.html { redirect_to @treatment, notice: 'Treatment was successfully created.' }
         format.json { render :show, status: :created, location: @treatment }
       else
