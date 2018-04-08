@@ -20,5 +20,9 @@
   <%= @treatment.user_id %>
 </p>
 
+<p>
+  <strong><%= time_ago_in_words(@treatment.created_at) %></strong> ago created!
+</p>
+
 <%= link_to 'Edit', edit_treatment_path(@treatment) %> |
 <%= link_to 'Back', treatments_path %>
