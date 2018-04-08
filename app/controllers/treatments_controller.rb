@@ -14,7 +14,7 @@ class TreatmentsController < ApplicationController
 
   # GET /treatments/new
   def new
-    @treatment = Treatment.new
+    @treatment = current_user.treatments.build
   end
 
   # GET /treatments/1/edit
@@ -24,7 +24,7 @@ class TreatmentsController < ApplicationController
   # POST /treatments
   # POST /treatments.json
   def create
-    @treatment = Treatment.new(treatment_params)
+    @treatment = current_user.treatments.build(treatment_params)
     respond_to do |format|
       if @treatment.save
         #q1(@treatment.file1.url(:original, false), @treatment.file2.url(:original, false))
@@ -69,6 +69,6 @@ class TreatmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def treatment_params
-      params.require(:treatment).permit(:file1, :file2, :result, :created_by)
+      params.require(:treatment).permit(:file1, :file2, :result)
     end
 end
