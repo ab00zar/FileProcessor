@@ -1,33 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="row" style="margin-top: 50px;">
+  <div class="col-sm-8 offset-sm-2">
+    <div class="card card-primary">
+      <h4 class="card-header">List of Treatments created by <%= current_user.email %></h4>
+      <div class="card-body">
+        <p id="notice"><%= notice %></p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>File1</th>
+              <th>File2</th>
+              <th>Result</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
 
-<h1>Treatments</h1>
+          <tbody>
+            <% @treatments.each do |treatment| %>
+              <tr>
+                <td><%= link_to "Download", treatment.file1.url(:original, false), { target: '_blank' } %></td>
+                <td><%= link_to "Download", treatment.file2.url(:original, false), { target: '_blank' } %></td>
+                <td><%= link_to "Download", '/' + treatment.id.to_s, { target: '_blank' } %></td>
+                <td><%= link_to 'Show', treatment %></td>
+                <td><%= link_to 'Edit', edit_treatment_path(treatment) %></td>
+                <td><%= link_to 'Destroy', treatment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-<table>
-  <thead>
-    <tr>
-      <th>File1</th>
-      <th>File2</th>
-      <th>Result</th>
-      <th>Created by</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <br>
 
-  <tbody>
-    <% @treatments.each do |treatment| %>
-      <tr>
-        <td><%= link_to "Download", treatment.file1.url(:original, false) %></td>
-        <td><%= link_to "Download", treatment.file2.url(:original, false) %></td>
-        <td><%= link_to "Download", '/' + treatment.id.to_s, { target: '_blank' } %></td>
-        <td><%= treatment.user_id %></td>
-        <td><%= link_to 'Show', treatment %></td>
-        <td><%= link_to 'Edit', edit_treatment_path(treatment) %></td>
-        <td><%= link_to 'Destroy', treatment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Treatment', new_treatment_path %>
+        <%= link_to 'New Treatment', new_treatment_path %>
+      </div>
+    </div>
+  </div>
+</div>

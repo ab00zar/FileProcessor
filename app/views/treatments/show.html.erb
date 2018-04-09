@@ -1,28 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="row" style="margin-top: 50px;">
+  <div class="col-sm-8 offset-sm-2">
+    <div class="card card-primary">
+      <div class="card-body">
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>File1:</strong>
-  <%= link_to "Download", @treatment.file1.url(:original, false) %>
-</p>
+        <p>
+          <strong>File1:</strong>
+          <%= link_to "Download", @treatment.file1.url(:original, false), { target: '_blank' } %>
+        </p>
 
-<p>
-  <strong>File2:</strong>
-  <%= link_to "Download", @treatment.file2.url(:original, false) %>
-</p>
+        <p>
+          <strong>File2:</strong>
+          <%= link_to "Download", @treatment.file2.url(:original, false), { target: '_blank' } %>
+        </p>
 
-<p>
-  <strong>Result:</strong>
-  <%= link_to "Download", '/' + @treatment.id.to_s, { target: '_blank' } %>
-</p>
+        <p>
+          <strong>Result:</strong>
+          <%= link_to "Download", '/' + @treatment.id.to_s, { target: '_blank' } %>
+        </p>
 
-<p>
-  <strong>Created by:</strong>
-  <%= @treatment.user_id %>
-</p>
+        <p>
+          <strong>Created by:</strong>
+          <%= current_user.email %>
+        </p>
 
-<p>
-  <strong><%= time_ago_in_words(@treatment.created_at) %></strong> ago created!
-</p>
+        <p>
+          <strong><%= time_ago_in_words(@treatment.created_at) %></strong> ago created!
+        </p>
 
-<%= link_to 'Edit', edit_treatment_path(@treatment) %> |
-<%= link_to 'Back', treatments_path %>
+        <%= link_to 'Edit', edit_treatment_path(@treatment) %> |
+        <%= link_to 'Back', treatments_path %>
+      </div>
+    </div>
+  </div>
+</div>
