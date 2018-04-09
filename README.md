@@ -1,24 +1,11 @@
-# README
+# FileProcessor
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The goal is to create a tool for processing files.
 
-Things you may want to cover:
+* A user can sign up and log in
 
-* Ruby version
+* The user can upload two files
 
-* System dependencies
+* Output: File containing all the lines of A presented in B
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Each user can see the list of his created treatments (file process).
